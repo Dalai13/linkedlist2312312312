@@ -116,7 +116,7 @@ class LinkedList<E> {
   }
 
   E? removeLast() {
-    if (tail?.back == null) {
+    if (tail?.previous == null) {
       return null;
     } else if (isEmpty) {
       return null;
@@ -212,10 +212,20 @@ class LinkedList<E> {
   }
 
   E? pop() {
+  if (isEmpty) {
+      return null;
+    }
+    head?.next = head;
     // TODO: remove head
   }
 
   E? removeLast() {
+  if (tail?.previous == null) {
+      return null;
+    } else if (isEmpty) {
+      return null;
+    }
+    tail!.back = tail;
     // TODO: remove tail
   }
 
